@@ -21,6 +21,9 @@
 #include "TinySHA1.hpp"
 #include <iostream>
 #include <string>
+/**
+ * Test function that prints the input string and its SHA1 hash
+ */
 void testSHA1(const std::string& val) {
  	sha1::SHA1 s;
 	s.processBytes(val.c_str(), val.size());
