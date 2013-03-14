@@ -101,7 +101,7 @@ namespace sha1
 			processByte( static_cast<unsigned char>((bitCount>>16) & 0xFF));
 			processByte( static_cast<unsigned char>((bitCount>>8 ) & 0xFF));
 			processByte( static_cast<unsigned char>((bitCount)     & 0xFF));
-
+	
 			memcpy(digest, m_digest, 5 * sizeof(uint32_t));
 			return digest;
 		}
@@ -135,7 +135,7 @@ namespace sha1
 			digest[di++] = ((d32[4]) & 0xFF);
 			return digest;
 		}
-
+	
 	protected:
 		void processBlock() {
 			uint32_t w[80];
@@ -148,17 +148,17 @@ namespace sha1
 			for (size_t i = 16; i < 80; i++) {
 				w[i] = LeftRotate((w[i-3] ^ w[i-8] ^ w[i-14] ^ w[i-16]), 1);
 			}
-
+	
 			uint32_t a = m_digest[0];
 			uint32_t b = m_digest[1];
 			uint32_t c = m_digest[2];
 			uint32_t d = m_digest[3];
 			uint32_t e = m_digest[4];
-
+	
 			for (std::size_t i=0; i<80; ++i) {
 				uint32_t f = 0;
 				uint32_t k = 0;
-
+	
 				if (i<20) {
 					f = (b & c) | (~b & d);
 					k = 0x5A827999;
@@ -179,7 +179,7 @@ namespace sha1
 				b = a;
 				a = temp;
 			}
-
+	
 			m_digest[0] += a;
 			m_digest[1] += b;
 			m_digest[2] += c;
