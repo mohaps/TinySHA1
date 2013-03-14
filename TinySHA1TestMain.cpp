@@ -22,7 +22,7 @@
 #include <iostream>
 #include <string>
 void testSHA1(const std::string& val) {
-  sha1::SHA1 s;
+ 	sha1::SHA1 s;
 	s.processBytes(val.c_str(), val.size());
 	uint32_t digest[5];
 	s.getDigest(digest);	
