@@ -34,8 +34,7 @@ void testSHA1(const std::string& val) {
 //SHA1("The quick brown fox jumps over the lazy dog") = 2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12
 //SHA1("The quick brown fox jumps over the lazy cog") = de9f2c7f d25e1b3a fad3e85a 0bd17d9b 100db4b3
 //SHA1("") = da39a3ee 5e6b4b0d 3255bfef 95601890 afd80709
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
 	testSHA1("The quick brown fox jumps over the lazy dog");
 	testSHA1("The quick brown fox jumps over the lazy cog");
 	testSHA1("");
