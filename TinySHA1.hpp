@@ -27,7 +27,7 @@
 #include <stdint.h>
 namespace sha1
 {
-  class SHA1
+	class SHA1
 	{
 	public:
 		typedef uint32_t digest32_t[5];
