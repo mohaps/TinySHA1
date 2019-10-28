@@ -38,7 +38,7 @@ namespace sha1
 		SHA1(){ reset(); }
 		virtual ~SHA1() {}
 		SHA1(const SHA1& s) { *this = s; }
-		const SHA1& operator = (const SHA1& s) {
+		SHA1& operator = (const SHA1& s) {
 			memcpy(m_digest, s.m_digest, 5 * sizeof(uint32_t));
 			memcpy(m_block, s.m_block, 64);
 			m_blockByteIndex = s.m_blockByteIndex;
